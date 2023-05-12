@@ -40,6 +40,12 @@ public class CarParkService {
                 case 4:
                     carParkInformation.exitACar();
                     break;
+                case 5:
+                    carParkInformation.exitAMotorcycle();
+                    break;
+                case 6:
+                    carParkInformation.exitAVan();
+                    break;
                 default:
                     // code block
             }
