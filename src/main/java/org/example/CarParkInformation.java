@@ -63,12 +63,12 @@ public class CarParkInformation {
     public void exitACar() {
         if (occupiedCarSpaces > 0) {
             occupiedCarSpaces--;
-            pressEnterToContinue("\n    A car has left the car park");
+            pressEnterToContinue("\n    A car has exited the car park");
             return;
         }
         if(occupiedLargeSpaces > 0){
             occupiedLargeSpaces--;
-            pressEnterToContinue("\n    A car has left the car park");
+            pressEnterToContinue("\n    A car has exited the car park");
             return;
         }
         pressEnterToContinue("\n    Error: The carpark is empty.");
@@ -76,12 +76,30 @@ public class CarParkInformation {
     public void exitAVan() {
         if (occupiedCarSpaces > 0) {
             occupiedCarSpaces--;
-            pressEnterToContinue("\n    A car has left the car park");
+            pressEnterToContinue("\n    A van has exited the car park");
             return;
         }
         if(occupiedLargeSpaces > 0){
             occupiedLargeSpaces--;
-            pressEnterToContinue("\n    A car has left the car park");
+            pressEnterToContinue("\n    A van has exited the car park");
+            return;
+        }
+        pressEnterToContinue("\n    Error: The carpark is empty.");
+    }
+    public void exitAMotorcycle() {
+        if (occupiedMotorcyclesSpaces > 0) {
+            occupiedCarSpaces--;
+            pressEnterToContinue("\n    A motorcycle has exited the car park");
+            return;
+        }
+        if(occupiedCarSpaces > 0){
+            occupiedCarSpaces--;
+            pressEnterToContinue("\n    A motorcycle has exited the car park");
+            return;
+        }
+        if(occupiedLargeSpaces > 0){
+            occupiedLargeSpaces--;
+            pressEnterToContinue("\n    A motorcycle has exited the car park");
             return;
         }
         pressEnterToContinue("\n    Error: The carpark is empty.");
