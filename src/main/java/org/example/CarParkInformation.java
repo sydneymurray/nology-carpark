@@ -7,39 +7,59 @@ public class CarParkInformation {
     private final int largeSpaceCapacity = 10;
     private final int motorcycleSpaceCapacity = 5;
 
-    private int  totalCarSpaces = 0;
-    private int totalMotorcyclesSpaces = 0;
-    private int totalLargeSpaces = 0;
+    private int  occupiedCarSpaces = 0;
+    private int occupiedMotorcyclesSpaces = 0;
+    private int occupiedLargeSpaces = 0;
     private Scanner keyboardInput = new Scanner(System.in);
     private int selection;
 
     public void admitACar(){
-        if (totalCarSpaces < carSpaceCapacity){
-            totalCarSpaces++;
+        if (occupiedCarSpaces < carSpaceCapacity){
+            occupiedCarSpaces++;
             pressEnterToContinue("\n    Access Granted.");
             return;
         }
-        if (totalLargeSpaces < largeSpaceCapacity){
-            totalLargeSpaces++;
+        if (occupiedLargeSpaces < largeSpaceCapacity){
+            occupiedLargeSpaces++;
             pressEnterToContinue("\n    Access Granted.");
             return;
         }
         pressEnterToContinue("\n    Car park is full: Access denied.");
     }
     public void admitAVan(){
-        if (totalLargeSpaces < largeSpaceCapacity){
-            totalLargeSpaces++;
+        if (occupiedLargeSpaces < largeSpaceCapacity){
+            occupiedLargeSpaces++;
             pressEnterToContinue("\n    Access Granted.");
             return;
         }
-        if (totalCarSpaces < carSpaceCapacity - 2){
-            totalCarSpaces+=3;
+        if (occupiedCarSpaces < carSpaceCapacity - 2){
+            occupiedCarSpaces+=3;
             pressEnterToContinue("\n    Access Granted.");
             return;
         }
         pressEnterToContinue("\n    Car park is full: Access denied.");
     }
+    public void admitAMotorcycle(){
+        if (occupiedMotorcyclesSpaces < motorcycleSpaceCapacity){
+            occupiedMotorcyclesSpaces++;
+            pressEnterToContinue("\n    Access Granted.");
+            return;
+        }
+        if (occupiedCarSpaces < carSpaceCapacity){
+            occupiedCarSpaces++;
+            pressEnterToContinue("\n    Access Granted.");
+            return;
+        }
+        if (occupiedLargeSpaces < largeSpaceCapacity){
+            occupiedLargeSpaces++;
+            pressEnterToContinue("\n    Access Granted.");
+            return;
+        }
+        pressEnterToContinue("\n    Car park is full: Access denied.");
+    }
+    public void exitACar(){
 
+    }
 
     private void pressEnterToContinue(String message){
         System.out.println(message);
