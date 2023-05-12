@@ -32,10 +32,10 @@ public class CarParkService {
                     carParkInformation.admitACar();
                     break;
                 case 2:
-                    carParkInformation.admitAVan();
+                    carParkInformation.admitAMotorcycle();
                     break;
                 case 3:
-                    carParkInformation.admitAMotorcycle();
+                    carParkInformation.admitAVan();
                     break;
                 case 4:
                     carParkInformation.exitACar();
@@ -52,7 +52,6 @@ public class CarParkService {
                 default:
                     // code block
             }
-
         }
     }
 }

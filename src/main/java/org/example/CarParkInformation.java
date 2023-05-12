@@ -11,7 +11,6 @@ public class CarParkInformation {
     private int occupiedMotorcyclesSpaces = 2;
     private int occupiedLargeSpaces = 3;
     private Scanner keyboardInput = new Scanner(System.in);
-    private int selection;
 
     public void admitACar() {
         if (occupiedCarSpaces < carSpaceCapacity) {
@@ -88,7 +87,7 @@ public class CarParkInformation {
     }
     public void exitAMotorcycle() {
         if (occupiedMotorcyclesSpaces > 0) {
-            occupiedCarSpaces--;
+            occupiedMotorcyclesSpaces--;
             pressEnterToContinue("\n    A motorcycle has exited the car park");
             return;
         }
