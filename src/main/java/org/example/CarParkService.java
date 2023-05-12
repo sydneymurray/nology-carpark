@@ -46,6 +46,9 @@ public class CarParkService {
                 case 6:
                     carParkInformation.exitAVan();
                     break;
+                case 7:
+                    carParkInformation.status();
+                    break;
                 default:
                     // code block
             }

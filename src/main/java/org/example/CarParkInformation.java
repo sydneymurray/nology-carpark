@@ -7,9 +7,9 @@ public class CarParkInformation {
     private final int largeSpaceCapacity = 10;
     private final int motorcycleSpaceCapacity = 5;
 
-    private int occupiedCarSpaces = 0;
-    private int occupiedMotorcyclesSpaces = 0;
-    private int occupiedLargeSpaces = 0;
+    private int occupiedCarSpaces = 25;
+    private int occupiedMotorcyclesSpaces = 2;
+    private int occupiedLargeSpaces = 3;
     private Scanner keyboardInput = new Scanner(System.in);
     private int selection;
 
@@ -104,9 +104,19 @@ public class CarParkInformation {
         }
         pressEnterToContinue("\n    Error: The carpark is empty.");
     }
+    public void status(){
+        System.out.println("\n    " + (carSpaceCapacity - occupiedCarSpaces) + " car spaces of " + carSpaceCapacity +
+                " are free" );
+        System.out.println("\n    " + (motorcycleSpaceCapacity - occupiedMotorcyclesSpaces) + " motorcycle spaces of " +
+                motorcycleSpaceCapacity + " are free" );
+        System.out.println("\n    " + (largeSpaceCapacity - occupiedLargeSpaces) + " large vehicle spaces of " +
+                largeSpaceCapacity + " are free" );
+        pressEnterToContinue("");
+    }
 
     private void pressEnterToContinue(String message) {
         System.out.println(message);
+        System.out.println("\n    Press enter to continue");
         keyboardInput.nextLine();
     }
 }
