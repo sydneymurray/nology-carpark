@@ -1,15 +1,42 @@
 package org.example;
 
-public class CarParkService {
-    private final int carSpaceCapacity = 30;
-    private final int largespaceCapacity = 10;
-    private final int motorcycleSpace = 5;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
-    private int occupiedCarSpaces = 0;
-    private int occupiedLargeSpaces = 0;
-    private int occupiedMotorcycleSpaces = 0;
-    public void inService() {
+public class CarParkService {
+
+    private Scanner keyboardInput = new Scanner(System.in);
+    private int selection;
+
+    public void inService(CarParkInformation carParkInformation) {
         while (true) {
+            System.out.println("\n\n     Welcome to Syds Car Park. Please select an option: ");
+            System.out.println("\n    1) Admit Car");
+            System.out.println("\n    2) Admit Motorcycle");
+            System.out.println("\n    3) Admit Van");
+            System.out.println("\n    4) Exit Car");
+            System.out.println("\n    5) Exit Motorcycle");
+            System.out.println("\n    6) Exit Van");
+            System.out.println("\n    7) Display Car Park Status");
+
+            try {
+                selection = keyboardInput.nextInt();
+                keyboardInput.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("\nIncorrect selection");
+                keyboardInput.nextLine();
+                return;
+            }
+            switch (selection) {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                default:
+                    // code block
+            }
 
         }
     }
