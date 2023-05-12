@@ -26,6 +26,20 @@ public class CarParkInformation {
         }
         pressEnterToContinue("\n    Car park is full: Access denied.");
     }
+    public void admitAVan(){
+        if (totalLargeSpaces < largeSpaceCapacity){
+            totalLargeSpaces++;
+            pressEnterToContinue("\n    Access Granted.");
+            return;
+        }
+        if (totalCarSpaces < carSpaceCapacity - 2){
+            totalCarSpaces+=3;
+            pressEnterToContinue("\n    Access Granted.");
+            return;
+        }
+        pressEnterToContinue("\n    Car park is full: Access denied.");
+    }
+
 
     private void pressEnterToContinue(String message){
         System.out.println(message);

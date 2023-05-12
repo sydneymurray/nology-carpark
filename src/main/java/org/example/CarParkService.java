@@ -29,10 +29,13 @@ public class CarParkService {
             }
             switch (selection) {
                 case 1:
-
+                    carParkInformation.admitACar();
                     break;
                 case 2:
-
+                    carParkInformation.admitAVan();
+                    break;
+                case 3:
+                    //carParkInformation.admitAMotorcycle();
                     break;
                 default:
                     // code block
